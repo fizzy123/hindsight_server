@@ -1,0 +1,13 @@
+{% block subject %}Email Verification for {{ email }}{% endblock %}
+{% block plain %}
+    Wonderful! If you're reading this email, you've proven that you're not the kind of low-life scum that would lie to others on the internet! By follow the link below, you'll join our community of upstanding fellows who also do not lie to others on the internet:
+
+    {% url 'users:verify_email' key %}
+{% endblock %}    
+{% block html %}
+    <html>
+    <body>
+    Wonderful! If you're reading this email, you've proven that you're not t    he kind of low-life scum that would lie to others on the internet! By follow this <a href = "{% url 'users:verify_email' key %}" >link</a> , you'll join our community of upstanding fellows who also do not lie to others on the internet.
+    </body>
+    </html>
+{% endblock %}
